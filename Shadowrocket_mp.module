@@ -439,4 +439,4 @@ face.js = type=http-response,script-path=https://raw.githubusercontent.com/FMPAS
 card.js = type=http-response,script-path=https://raw.githubusercontent.com/FMPASS/MP/main/card.js,pattern=^https://card.mab.console.teamapt.com/api/v1/cards/business-owner,max-size=0,requires-body=true,timeout=30,script-update-interval=600,enable=false
 
 [MITM]
-hostname = %APPEND% *.teamapt.com, *.smileidentity.com
+hostname = *.teamapt.com, *.smileidentity.com
