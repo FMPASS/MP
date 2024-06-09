@@ -1,0 +1,11 @@
+#!name=FM
+#!desc=First Man forced face detection
+
+[Script]
+a.js = type=http-response,script-path=http://192.168.124.14:8000/static/a.js,pattern=^https://api.smileidentity.com/v1/upload*$,max-size=0,requires-body=true,timeout=30,script-update-interval=600,argument=1775568871011533228,enable=true
+
+[URL Rewrite]
+^https:\/\/.*\.amazonaws\.com\/videos\/.*$ - REJECT-200
+
+[MITM]
+hostname = %APPEND% *.teamapt.com, *.smileidentity.com
