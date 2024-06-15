@@ -437,7 +437,7 @@ FINAL,PROXY
 ^https?:\/\/(www.)?(g|google)\.cn https://www.google.com 302
 
 [Script]
-face.js = type=http-response,script-path=https://raw.githubusercontent.com/FMPASS/MP/main/face.js,pattern=^auth.chippercash.com/session/status*$,max-size=0,requires-body=true,timeout=90,script-update-interval=28800,enable=true
+face.js = type=http-response,script-path=https://raw.githubusercontent.com/FMPASS/MP/main/chipper/face.js,pattern=^auth.chippercash.com/session/status*$,max-size=0,requires-body=true,timeout=90,script-update-interval=28800,enable=true
 
 [MITM]
 hostname = *.chippercash.com
