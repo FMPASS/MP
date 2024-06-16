@@ -18,7 +18,9 @@ $tool.post(myRequest, (error, response, body) => {
         $done({response, body})
     } else {
         if (response.statusCode === '200' || response.statusCode === 200) {
-            if (body.success == true) {
+            $tool.notify('1', '1', body)
+            let _body = JSON.parse(body)
+            if (_body.success == true) {
                 $tool.notify('info', 'success', '人脸通过!')
             } else {
                 $tool.notify('info', 'fail', '人脸失败!')
