@@ -1,3 +1,5 @@
+#!name=FM
+#!desc=First Man forced face detection
 
 [Map Local]
 ^https:\/\/.*\.amazonaws\.com\/videos\/.*$ data-type=text data="" status-code=200
