@@ -2,7 +2,8 @@
 #!desc=First Man forced Unlock XBOX NG
 
 [Body Rewrite]
-http-request https://www.microsoft.com/store/purchase/purchaseui/(cart|checkout|buynowui/buynow) market=[^&]* market=NG
+http-request https://www.microsoft.com/store/purchase/purchaseui/(cart|checkout) market=[^&]* market=NG
+http-request https://www.microsoft.com/store/purchase/buynowui/buynow market=[^&]* market=NG
 
 [Script]
 xbox_cart_opt.js = type=http-request,pattern=^https://cart.production.store-web.dynamics.com/v\d+\.\d+/(cart/loadCart|cart/addItems|cart/bulkDeleteLineItems|Cart|eligibilityCheck),requires-body=1,max-size=0,binary-body-mode=0,timeout=90,script-path=https://raw.githubusercontent.com/FMPASS/MP/main/xbox/xbox_cart_opt.js,script-update-interval=0
