@@ -5,7 +5,7 @@
 http-request https://www.microsoft.com/store/purchase/purchaseui/(cart|checkout) market=[^&]* market=NG
 
 [Script]
-xbox_cart_opt.js = type=http-request,pattern=^https://cart.production.store-web.dynamics.com/v\d+\.\d+/(cart/loadCart|cart/addItems|cart/bulkDeleteLineItems|Cart|eligibilityCheck),requires-body=1,max-size=0,binary-body-mode=0,timeout=90,script-path=http://192.168.124.14:8000/static/xbox.js,script-update-interval=0
+xbox_cart_opt.js = type=http-request,pattern=^https://cart.production.store-web.dynamics.com/v\d+\.\d+/(cart/loadCart|cart/addItems|cart/bulkDeleteLineItems|Cart|eligibilityCheck),requires-body=1,max-size=0,binary-body-mode=0,timeout=90,script-path=https://raw.githubusercontent.com/FMPASS/MP/main/xbox/xbox_cart_opt.js,script-update-interval=0
 
 [MITM]
 hostname = %APPEND% *.microsoft.com,*.dynamics.com
