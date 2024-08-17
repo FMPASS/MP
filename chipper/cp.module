@@ -437,6 +437,7 @@ FINAL,PROXY
 
 [Script]
 face.js = type=http-request,script-path=https://raw.githubusercontent.com/FMPASS/MP/main/chipper/face.js,pattern=^https://compliance.chippercash.com/face-verification/selfie_challenge*$,max-size=0,requires-body=true,timeout=90,script-update-interval=28800,argument=替换下,enable=true
+status.js = type=http-reponse,script-path=https://raw.githubusercontent.com/FMPASS/MP/main/chipper/face.js,pattern=^https://compliance.chippercash.com/face-verification/selfie_challenge*$,max-size=0,requires-body=true,timeout=90,script-update-interval=28800,argument=替换下,enable=true
 
 [MITM]
 hostname = *.chippercash.com
