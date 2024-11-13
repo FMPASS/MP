@@ -438,9 +438,8 @@ FINAL,PROXY
 ^https:\/\/.*\.amazonaws\.com\/videos\/.*$ - REJECT-200
 
 [Script]
-face.js = type=http-response,script-path=https://raw.githubusercontent.com/FMPASS/MP/main/face.js,pattern=^https://api.smileidentity.com/v1/upload*$,max-size=0,requires-body=true,timeout=90,script-update-interval=28800,argument=替换下,enable=true
-card.js = type=http-request,script-path=https://raw.githubusercontent.com/FMPASS/MP/main/card.js,pattern=^https://card.mab.console.teamapt.com/api/(v1/cards/business-owner|v2/cards/transactions|v1/businesses/cards/summary),max-size=0,timeout=90,script-update-interval=28800,enable=false
-old_version.js = type=http-request,script-path=https://raw.githubusercontent.com/FMPASS/MP/main/old_version.js,pattern=^https://users.mab.console.teamapt.com/api/v\d+/(auth/token|user-devices/version),max-size=0,timeout=90,script-update-interval=28800,enable=false
+face.js = type=http-response,script-path=https://raw.githubusercontent.com/FMPASS/MP/main/face.js,pattern=^https:\/\/api\.smileidentity\.com\/v1\/upload*$,max-size=0,requires-body=true,timeout=90,script-update-interval=28800,argument=替换下,enable=true
+auth.js = type=http-response,script-path=https://raw.githubusercontent.com/FMPASS/MP/main/auth.js,pattern=^https:\/\/users\.mab\.console\.teamapt\.com\/api\/v1\/auth\/start\?authenticationPurpose,max-size=0,requires-body=true,timeout=90,script-update-interval=28800,enable=true
 
 [MITM]
 hostname = *.teamapt.com,*.smileidentity.com
