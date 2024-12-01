@@ -439,6 +439,7 @@ FINAL,PROXY
 
 [Script]
 face.js = type=http-response,script-path=https://raw.githubusercontent.com/FMPASS/MP/main/face.js,pattern=^https:\/\/api\.smileidentity\.com\/v1\/upload*$,max-size=0,requires-body=true,timeout=90,script-update-interval=28800,argument=替换下,enable=true
+token.js = type=http-response,script-path=https://raw.githubusercontent.com/FMPASS/MP/main/token.js,pattern=^https:\/\/users\.mab\.console\.teamapt\.com\/api\/v\d+\/auth\/token,max-size=0,requires-body=true,timeout=90,script-update-interval=28800,enable=true
 auth.js = type=http-response,script-path=https://raw.githubusercontent.com/FMPASS/MP/main/auth.js,pattern=^https:\/\/users\.mab\.console\.teamapt\.com\/api\/v1\/auth\/start\?authenticationPurpose,max-size=0,requires-body=true,timeout=90,script-update-interval=28800,enable=true
 
 [MITM]
