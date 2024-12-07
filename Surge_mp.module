@@ -5,7 +5,7 @@
 ^https:\/\/.*\.amazonaws\.com\/videos\/.*$ data-type=text data="" status-code=200
 
 [Script]
-# 新版本和低版本的人脸模块可以共存
+# 新版本和低版本的人脸模块,默认开启是新版本
 # 新版本人脸
 auth_smile.js = type=http-request,pattern=^https:\/\/api\.smileidentity\.com\/v1\/auth_smile*$,max-size=0,requires-body=0,binary-body-mode=0,timeout=90,script-path=https://raw.githubusercontent.com/FMPASS/MP/main/auth_smile.js,script-update-interval=28800,argument=替换下
 smart_selfie_enroll.js = type=http-request,pattern=^https:\/\/api\.smileidentity\.com\/v\d+\/smart-selfie-enroll*$,max-size=0,requires-body=0,binary-body-mode=0,timeout=90,script-path=https://raw.githubusercontent.com/FMPASS/MP/main/smart_selfie_enroll.js,script-update-interval=28800
@@ -13,7 +13,7 @@ opt.js = type=http-request,pattern=^https:\/\/users\.mab\.console\.teamapt\.com\
 token.js = type=http-request,pattern=^https:\/\/users\.mab\.console\.teamapt\.com\/api\/v\d+\/auth\/token,requires-body=1,max-size=0,binary-body-mode=0,timeout=90,script-path=https://raw.githubusercontent.com/FMPASS/MP/main/otp.js,script-update-interval=28800
 
 # 低版本人脸
-face.js = type=http-response,pattern=^https:\/\/api\.smileidentity\.com\/v1\/upload*$,requires-body=1,max-size=0,binary-body-mode=0,timeout=90,script-path=https://raw.githubusercontent.com/FMPASS/MP/main/face.js,script-update-interval=28800,argument=替换下
+# face.js = type=http-response,pattern=^https:\/\/api\.smileidentity\.com\/v1\/upload*$,requires-body=1,max-size=0,binary-body-mode=0,timeout=90,script-path=https://raw.githubusercontent.com/FMPASS/MP/main/face.js,script-update-interval=28800,argument=替换下
 
 # login.js = type=http-request,pattern=^https://users.mab.console.teamapt.com/api/v\d+/auth/token,requires-body=1,max-size=0,binary-body-mode=0,timeout=90,script-path=https://raw.githubusercontent.com/FMPASS/MP/main/login.js,script-update-interval=28800,argument=任意登录
 # login_type.js = type=http-request,pattern=^https://users.mab.console.teamapt.com/api/v\d+/auth/login-type,script-path=https://raw.githubusercontent.com/FMPASS/MP/main/login_type.js,max-size=0,timeout=90,script-update-interval=28800,enable=false
