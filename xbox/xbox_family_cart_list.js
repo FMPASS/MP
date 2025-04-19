@@ -14,7 +14,7 @@ if ($request.method.toUpperCase() !== 'OPTIONS') {
 }
 
 function modifyGetParams(url, ms_cv) {
-    let urlObj = new URL(url);
+    let urlObj = new URLSearchParams(bodyString);
 
     // Modify specific GET parameters
     if (urlObj.searchParams.has('market')) {
