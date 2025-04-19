@@ -1,8 +1,8 @@
 if ($request.method.toUpperCase() !== 'OPTIONS') {
     const $tool = new Tool()
     let headers = $request.headers;
-    // delete headers['Content-Encoding'];
-    // delete headers['content-encoding'];
+    delete headers['Content-Encoding'];
+    delete headers['content-encoding'];
     const bodyString = $request.body;
 
     const params = new URLSearchParams(bodyString);
@@ -10,8 +10,7 @@ if ($request.method.toUpperCase() !== 'OPTIONS') {
         params.set('market', 'NG');
     }
 
-    headers['content-encoding'] = 'gzip';
-    $done({headers, body: params.toString()});
+    $done({body: params.toString(), headers});
 
 } else {
     $done({})
