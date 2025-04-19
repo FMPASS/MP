@@ -5,50 +5,15 @@ if ($request.method.toUpperCase() !== 'OPTIONS') {
     delete headers['content-encoding'];
     const bodyString = $request.body;
 
-    let _body = modifyGetParams(bodyString)
+    const params = new URLSearchParams(bodyString);
+    if (params.has('market')) {
+        params.set('market', 'NG');
+    }
 
-    $done({headers, body: _body});
+    $done({headers, body: params.toString()});
 
 } else {
     $done({})
-}
-
-function modifyGetParams(url, ms_cv) {
-    let urlObj = new URLSearchParams(bodyString);
-
-    // Modify specific GET parameters
-    if (urlObj.searchParams.has('market')) {
-        urlObj.searchParams.set('market', 'NG');
-    }
-    if (urlObj.searchParams.has('locale')) {
-        urlObj.searchParams.set('locale', 'en-NG');
-    }
-
-    if (urlObj.searchParams.has('noCanonical')) {
-        urlObj.searchParams.set('noCanonical', 'true');
-    }
-
-    if (ms_cv) {
-        if (urlObj.searchParams.has('ms-cv')) {
-            urlObj.searchParams.set('ms-cv', ms_cv);
-        }
-    }
-
-    return urlObj.toString();
-};
-
-function parseUrlEncodedBodyString(str) {
-    return str.split('&').reduce((acc, pair) => {
-        const [key, value] = pair.split('=');
-        acc[decodeURIComponent(key)] = decodeURIComponent(value);
-        return acc;
-    }, {});
-}
-
-function toUrlEncodedBodyString(obj) {
-    return Object.keys(obj)
-        .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(obj[key]))
-        .join('&');
 }
 
 function Tool() {
