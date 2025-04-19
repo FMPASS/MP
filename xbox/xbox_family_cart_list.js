@@ -3,6 +3,8 @@ if ($request.method.toUpperCase() !== 'OPTIONS') {
     let currentHeaders = $request.headers;
     currentHeaders ['Content-Encoding'] = '';
     currentHeaders ['content-encoding'] = '';
+    delete currentHeaders['Content-Length']
+    delete currentHeaders['content-length']
     const bodyString = $request.body;
 
     const params = new URLSearchParams(bodyString);
