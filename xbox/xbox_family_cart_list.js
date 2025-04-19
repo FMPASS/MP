@@ -3,7 +3,11 @@ if ($request.method.toUpperCase() !== 'OPTIONS') {
     let headers = $request.headers;
     delete headers['Content-Encoding'];
     delete headers['content-encoding'];
-    $done({headers});
+    const bodyString = $request.body;
+
+    let _body = modifyGetParams(bodyString)
+
+    $done({headers, body: _body});
 
 } else {
     $done({})
