@@ -9,9 +9,7 @@ if ($request.method.toUpperCase() !== 'OPTIONS') {
     if (params.has('market')) {
         params.set('market', 'NG');
     }
-    const encoder = new TextEncoder(); // TextEncoder 通常在 Surge JS 环境中可用
-    const inputData = encoder.encode(params.toString());
-    const compressedData = pako.gzip(inputData);
+    const compressedData = pako.gzip(params.toString());
     currentHeaders['Content-Encoding'] = 'gzip';
     currentHeaders['content-encoding'] = 'gzip';
     $done({body: compressedData, headers: currentHeaders});
