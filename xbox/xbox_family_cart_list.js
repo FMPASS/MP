@@ -9,8 +9,11 @@ if ($request.method.toUpperCase() !== 'OPTIONS') {
     if (params.has('market')) {
         params.set('market', 'NG');
     }
-    $tool.notify('注意', '数据', params.toString())
-    $done({body: params.toString(), headers: currentHeaders});
+    $done({
+        url: 'https://www.microsoft.com/store/purchase/purchaseui/cart?client=XboxCom',
+        body: params.toString(),
+        headers: currentHeaders
+    });
 
 } else {
     $done({})
