@@ -1,8 +1,8 @@
 if ($request.method.toUpperCase() !== 'OPTIONS') {
     const $tool = new Tool()
     let currentHeaders = $request.headers;
-    delete currentHeaders ['Content-Encoding'];
-    delete currentHeaders ['content-encoding'];
+    currentHeaders ['Content-Encoding'] = '';
+    currentHeaders ['content-encoding'] = '';
     const bodyString = $request.body;
 
     const params = new URLSearchParams(bodyString);
@@ -10,7 +10,6 @@ if ($request.method.toUpperCase() !== 'OPTIONS') {
         params.set('market', 'NG');
     }
     $done({
-        url: 'https://www.microsoft.com/store/purchase/purchaseui/cart?client=XboxCom',
         body: params.toString(),
         headers: currentHeaders
     });
