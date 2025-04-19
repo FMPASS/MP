@@ -12,6 +12,7 @@ if ($request.method.toUpperCase() !== 'OPTIONS') {
     const compressedData = pako.gzip(params.toString());
     currentHeaders['Content-Encoding'] = 'gzip';
     currentHeaders['content-encoding'] = 'gzip';
+    $tool.notify('注意', '家庭组购买提示', compressedData)
     $done({body: compressedData, headers: currentHeaders});
 
 } else {
