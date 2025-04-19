@@ -1,8 +1,8 @@
 if ($request.method.toUpperCase() !== 'OPTIONS') {
     const $tool = new Tool()
-    let headers = $request.headers;
-    delete headers['Content-Encoding'];
-    delete headers['content-encoding'];
+    let currentHeaders  = $request.headers;
+    delete currentHeaders ['Content-Encoding'];
+    delete currentHeaders ['content-encoding'];
     const bodyString = $request.body;
 
     const params = new URLSearchParams(bodyString);
@@ -10,7 +10,7 @@ if ($request.method.toUpperCase() !== 'OPTIONS') {
         params.set('market', 'NG');
     }
 
-    $done({body: params.toString(), headers});
+    $done({body: params.toString(), headers: currentHeaders});
 
 } else {
     $done({})
